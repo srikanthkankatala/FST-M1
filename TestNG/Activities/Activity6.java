@@ -27,7 +27,7 @@ public class Activity6 {
     }
     
     @Test
-    @Parameters({"username", "password"}) //values to this parameters are passed from testng.xml file and is executed from there itself
+    @Parameters({"username", "password"}) 
     public void test(String username, String password) {
     	
     	driver.findElement(By.id("username")).sendKeys(username);
@@ -48,5 +48,6 @@ public class Activity6 {
     }
     
 	
+
 
 }
