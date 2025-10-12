@@ -28,28 +28,18 @@ public class Activity7 {
 	
 	@DataProvider(name="Authentication")
 	public static Object[][] credentials() {
-	    // Declares a static method named 'credentials' that returns a 2D array of Objects.
-	    // This is typically used as a data provider in TestNG for parameterized tests.
 	    
 	    return new Object[][] {
-	        // Returns a 2D array containing multiple sets of test data.
-	        // Each inner array represents one test case with three values:
-	        // - Username
-	        // - Password
-	        // - Expected result or message
 
 	        {"test_user1", "test_password1", "Invalid credentials"},
-	        // First test case: uses test_user1 and test_password1, expecting "Invalid credentials" message.
-
+	        
 	        {"test_user2", "test_password2", "Invalid credentials"}
-	        // Second test case: uses test_user2 and test_password2, also expecting "Invalid credentials".
-	    };
+	        };
 	}
 
 	
 	@Test(dataProvider = "Authentication")
 	public void test(String username, String password, String expectedmessage) {
-		//before passing the parameters we need to clear the fields
 		driver.findElement(By.id("username")).clear();
 		driver.findElement(By.id("password")).clear();
 		
@@ -57,10 +47,7 @@ public class Activity7 {
     	driver.findElement(By.id("password")).sendKeys(password);
     	
     	driver.findElement(By.xpath("//button[text()='Submit']")).click();
-    	
-  //  	wait.until(ExpectedConditions.titleContains("Success"));    	
-    	
-    	Assert.assertEquals(expectedmessage, driver.findElement(By.id("subheading")).getText());
+      	Assert.assertEquals(expectedmessage, driver.findElement(By.id("subheading")).getText());
 		
 	}
 	
@@ -69,4 +56,5 @@ public class Activity7 {
 	public void close() {
 	driver.quit();
 	}
+
 }
