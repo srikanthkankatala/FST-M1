@@ -1,9 +1,0 @@
-#take users name as input
-name = input("Enter your name")
-#take users age as input
-age = int(input("Enter your age"))
-#calculate the year they turn 100
-print(name)
-print(age)
-year_100 = (100-age) + 2025
-print(year_100)
