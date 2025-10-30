@@ -1,5 +1,0 @@
-nums = (10, 20, 33, 46, 55)
-print("Tuple:", nums)
-
-div_by_five = [n for n in nums if n % 5 == 0]
-print("Numbers divisible by 5:", div_by_five)
